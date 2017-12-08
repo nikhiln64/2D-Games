@@ -11,6 +11,21 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1820030120204782}
   m_IsPrefabParent: 1
+--- !u!1 &1492989739610862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4859666106501874}
+  m_Layer: 8
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1820030120204782
 GameObject:
   m_ObjectHideFlags: 0
@@ -25,6 +40,7 @@ GameObject:
   - component: {fileID: 61425364975320444}
   - component: {fileID: 82051135016992354}
   - component: {fileID: 95406104343243518}
+  - component: {fileID: 114759154728483834}
   m_Layer: 8
   m_Name: Sparty
   m_TagString: Player
@@ -41,8 +57,22 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.24, y: -0.95, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4859666106501874}
   m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4859666106501874
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1492989739610862}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.016, y: -0.6, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4723337041800006}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50708625836112648
@@ -202,6 +232,30 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
+--- !u!114 &114759154728483834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1820030120204782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5dc38bfa25ae6494ea2f129c77a44496, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 3
+  jumpForce: 600
+  playerHealth: 1
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 1536
+  groundCheck: {fileID: 4859666106501874}
+  playerCanMove: 1
+  coinSFX: {fileID: 8300000, guid: 063cbe9660db47e4a9b15a24732cb612, type: 3}
+  deathSFX: {fileID: 8300000, guid: e48352e9d652b7b43afe803dce9344c0, type: 3}
+  fallSFX: {fileID: 8300000, guid: 8266afbd6e3ed06458f499cfeaf67081, type: 3}
+  jumpSFX: {fileID: 8300000, guid: 326b367cfe50f7d41ba3d64068c6180a, type: 3}
+  victorySFX: {fileID: 8300000, guid: 4353a11d95474d940ae1f8e75b753565, type: 3}
 --- !u!212 &212936352475076862
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -234,7 +288,7 @@ SpriteRenderer:
   m_SortingLayerID: -628443559
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300026, guid: b933cc4e1dbdc483eb4917c95fc6d81e, type: 3}
+  m_Sprite: {fileID: 21300028, guid: b933cc4e1dbdc483eb4917c95fc6d81e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
